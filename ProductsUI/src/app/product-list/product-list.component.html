@@ -1,0 +1,23 @@
+<h2><span style="margin: 1px; font-size:16px; padding-right: 445px" class="blue">Products Catalogue</span></h2>
+<table class="table-bordered">
+    <tr class="white darkblueback">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Photo</th>
+      <th>Price</th>
+      <th>Category</th>
+      <th>Characteristics</th>
+      <th>View</th>
+    </tr>
+    <tr *ngFor="let product of productsList">
+        <td>{{product.productId}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td><img width="150" height="150" src="data:image/jpg;base64,{{product.photo}}"></td>
+        <td>{{product.price}}$</td>
+        <td>{{product.category}}</td>
+        <td>{{product.characteristics}}</td>
+        <td><a routerLink="{{product.productId}}">View Product</a></td>
+    </tr>  <!-- routerLink="/products/{{product.productId}}" -->
+    </table>  <!-- [routerLink]="['/products',product.productId]" -->
