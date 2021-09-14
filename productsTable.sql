@@ -46,3 +46,9 @@ SELECT 'Nokia C30','Nokia 2-sim phone, 32GB, LTE, 13 MP-Camera'
 ,(SELECT *
 FROM OPENROWSET(BULK N'C:\ProductsSP\images\nokia-c30.jpg', SINGLE_BLOB) Photo),
 100.00, 'Smartphones', 'Width:79mm, Height:177mm, Colour:Grey';
+
+INSERT INTO dbo.Product1 (Name,DescriptionOf,Photo,Price,Category,Characteristics)
+SELECT 'Ball','Gaming, training, for Football'
+,(SELECT *
+FROM OPENROWSET(BULK N'C:\ProductsSP\images\NewBalanceP5.jpg', SINGLE_BLOB) Photo),
+20.00, 'Sport', 'Manufactured in: USA, Colour:Red-White';

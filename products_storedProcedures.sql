@@ -1,3 +1,6 @@
+USE Products
+
+GO
 
 CREATE PROCEDURE sp_GetAllProducts
 AS
